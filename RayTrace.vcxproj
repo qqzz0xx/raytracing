@@ -119,10 +119,11 @@
     <ClInclude Include="PhongMaterial.h" />
     <ClInclude Include="PPMWriter.h" />
     <ClInclude Include="Ray.h" />
-    <ClInclude Include="Render.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="Surface.h" />
+    <ClInclude Include="TestRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
@@ -132,6 +133,7 @@
     <ClCompile Include="Ray.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="TestRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

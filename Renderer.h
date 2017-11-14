@@ -1,6 +1,6 @@
 #pragma once
 #include "Scene.h"
-class Readerer
+class Renderer
 {
 public:
 

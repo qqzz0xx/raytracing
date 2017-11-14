@@ -46,7 +46,9 @@ void PPMWriter::Flush()
 		{
 			for (size_t j = 0; j < height; j++)
 			{
-				ofs <<(int) pixels[j* width + i].x  << " " << (int)pixels[j*width + i].y <<" " << (int)pixels[j*width + i].z<<"  ";
+				ofs << (int)(pixels[j* width + i].x * 255) << " " 
+					<< (int)(pixels[j*width + i].y * 255) <<" "
+					<< (int)(pixels[j*width + i].z * 255) <<"  ";
 
 			}
 			ofs << std::endl;

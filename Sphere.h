@@ -9,7 +9,7 @@ public:
 	glm::vec3 center;
 public:
 
-	Sphere(glm::vec3 c, float r) : center(c), radius(r), sqrRadius(r*r) {}
+	Sphere(Material* mate, glm::vec3 c, float r) : center(c), radius(r), sqrRadius(r*r), Surface(mate) {}
 	Sphere();
 	~Sphere();
 

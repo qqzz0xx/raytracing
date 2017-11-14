@@ -18,7 +18,7 @@ glm::vec3 PhongMaterial::GetColor(const Light & light, const Ray & ray, const gl
 	glm::vec3 H = glm::normalize(ray.dir + light.dir);
 	float h_dot_n = glm::dot(H, normal);
 	float spec = this->specular * glm::pow(glm::max(h_dot_n, 0.0f), shininess);
-	return (diff + spec)* color * light.color;
+	return glm::clamp ((diff + spec) * light.color,  glm::vec3(0), glm::vec3(1));
 }
 
 
