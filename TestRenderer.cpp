@@ -12,30 +12,14 @@ TestRenderer::~TestRenderer()
 {
 }
 
-void TestRenderer::Render(const Scene & scene)
+glm::vec3 TestRenderer::Tracing(const Ray& ray, const Scene& scene, int depth)
 {
-
-	PPMWriter write(width, height);
-	write.SetName("test1.ppm");
-	HitInfo hitinfo;
-	for (int i = 0; i < width; i++)
+	glm::vec3 color(0);
+	static HitInfo hitinfo;
+	if (scene.Hit(ray, 0, 200, hitinfo))
 	{
-		float sx = i / (float)width;
-		for (int j = 0; j < height; j++)
-		{
-			float sy = j / (float)height;
-			scene.camera.GenerateRay(sx, sy);
-			Ray ray = scene.camera.GenerateRay(sx, sy);
-
-			if (scene.Hit(ray, 0, 200, hitinfo))
-			{
-				//float al = glm::min((hitinfo.distance / 20) * 255.0f, 255.0f);
-				auto color = hitinfo.hitObject->material->GetColor(scene.light, ray, hitinfo.position, hitinfo.normal);
-				write.SetPixel(i, j, color);
-			}
-
-		}
+		//float al = glm::min((hitinfo.distance / 20) * 255.0f, 255.0f);
+		color = hitinfo.hitObject->material->GetColor(scene.light, ray, hitinfo.position, hitinfo.normal);
 	}
-	write.Flush();
-
+	return color;
 }

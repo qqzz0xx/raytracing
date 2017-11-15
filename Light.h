@@ -6,7 +6,7 @@ public:
 	Light(const glm::vec3 &d, const glm::vec3 &c) :
 		dir(d), color(c) {}
 	Light() {
-		color = glm::vec3(1, 1, 0);
+		color = glm::vec3(1, 1, 1);
 		dir = glm::normalize(glm::vec3(1, 1, 1));
 	}
 public:

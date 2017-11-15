@@ -48,6 +48,18 @@
     <ClInclude Include="TestRenderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Comm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GridMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ReflectionRenderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ray.cpp">
@@ -72,6 +84,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="TestRenderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GridMaterial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ReflectionRenderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

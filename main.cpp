@@ -5,15 +5,17 @@
 #include "PhongMaterial.h"
 #include "Scene.h"
 #include "TestRenderer.h"
-
-
+#include "GridMaterial.h"
+#include "Plane.h"
+#include "ReflectionRenderer.h"
 int main()
 {
-	Material* redMate = new PhongMaterial(glm::vec3(1,0,0), 1, 1, 1, 0);
-	Material* blueMate = new PhongMaterial(glm::vec3(0, 0, 1), 1, 1, 1, 0);
+	Material* redMate = new PhongMaterial(glm::vec3(1,0,0), 1, 1, 16, 0.25);
+	Material* blueMate = new PhongMaterial(glm::vec3(0, 0, 1), 1, 1, 16, 0.25);
+	Material* gridMate = new GridMaterial();
 	Sphere sphere(redMate, glm::vec3(-10, 10, -10), 10);
 	Sphere sphere1(blueMate, glm::vec3(10, 10, -10), 10);
-
+	Plane plane(gridMate, glm::vec3(0, 1, 0), glm::vec3(0, 0, 0));
 	Camera camera;
 	camera.LookAt(glm::vec3(0, 5, 15),( sphere.center + sphere1.center)*0.5f, glm::vec3(0, 1, 0), 90);
 	float maxDistance = 20;
@@ -24,10 +26,13 @@ int main()
 	scene.SetCamera(camera);
 	scene.AddSurface(&sphere);
 	scene.AddSurface(&sphere1);
+	scene.AddSurface(&plane);
 
-	TestRenderer renderer;
-	renderer.Render(scene);
+	//Renderer renderer;
+	//renderer.Render(scene);
 
+	ReflectionRenderer reflectionRenderer("refl.ppm");
+	reflectionRenderer.Render(scene);
 
 	//PPMWriter write(w, h);
 	//write.SetName("test1.ppm");

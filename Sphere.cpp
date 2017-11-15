@@ -26,7 +26,7 @@ bool Sphere::Hit(const Ray & ray, float tmin, float tmax, HitInfo & t)
 			t.hitObject = this;
 			t.distance = -d_dot_v - glm::sqrt(discr);
 			t.position = ray.GetPoint(t.distance);
-			t.normal = t.position - this->center;
+			t.normal = glm::normalize(t.position - this->center);
 
 			return true;
 		}

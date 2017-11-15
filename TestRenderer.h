@@ -4,16 +4,12 @@
 
 class TestRenderer : public Renderer
 {
-private:
-	int width = 500;
-	int height = 500;
+
 public:
 	TestRenderer();
 	~TestRenderer();
 
-
-	// Í¨¹ý Renderer ¼Ì³Ð
-	virtual void Render(const Scene & scnen) override;
+	virtual glm::vec3 Tracing(const Ray& ray, const Scene& scene, int depth) override;
 
 };
 
