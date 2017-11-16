@@ -60,6 +60,15 @@
     <ClInclude Include="ReflectionRenderer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowRenderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorMaterial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Ray.cpp">
@@ -96,6 +105,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionalLight.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowRenderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorMaterial.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

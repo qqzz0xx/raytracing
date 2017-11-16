@@ -9,7 +9,7 @@ protected:
 	std::string fileName;
 public:
 	Renderer() { fileName = "test.ppm"; }
-	Renderer(std::string & imgName): fileName(imgName) {}
+	Renderer(const std::string & imgName): fileName(imgName) {}
 	virtual void Render(const Scene& scene);
 	virtual glm::vec3 Tracing(const Ray& ray, const Scene& scene, int depth);
 };

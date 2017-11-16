@@ -1,12 +1,12 @@
 #pragma once
 #include "Renderer.h"
-class ReflectionRenderer :
+class ShadowRenderer :
 	public Renderer
 {
 public:
-	ReflectionRenderer() :Renderer() {}
-	ReflectionRenderer(const std::string fileName) : Renderer(fileName) { }
-
+	ShadowRenderer();
+	ShadowRenderer(const std::string &name) :Renderer(name) {}
+	~ShadowRenderer();
 
 	virtual glm::vec3 Tracing(const Ray& ray, const Scene& scene, int depth) override;
 

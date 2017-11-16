@@ -2,8 +2,10 @@
 
 #include "Comm.h"
 
-glm::vec3 PhongMaterial::GetColor(const Light & light, const Ray & ray, const glm::vec3 & pos, const glm::vec3 & normal)
+glm::vec3 PhongMaterial::GetColor(const LightInfo & light, const Ray & ray, const glm::vec3 & pos, const glm::vec3 & normal)
 {
+	if (light.isShadow == true) return light.color;
+
 	float l_dot_n = glm::dot(light.dir, normal);
 	float diff = this->diffuse * glm::max(0.0f, l_dot_n);
 	glm::vec3 H = glm::normalize(-ray.dir + light.dir);

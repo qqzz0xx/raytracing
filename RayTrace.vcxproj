@@ -114,7 +114,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="ColorMaterial.h" />
     <ClInclude Include="Comm.h" />
+    <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="GridMaterial.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Material.h" />
@@ -125,12 +127,15 @@
     <ClInclude Include="ReflectionRenderer.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="ShadowRenderer.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="Surface.h" />
     <ClInclude Include="TestRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ColorMaterial.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
     <ClCompile Include="GridMaterial.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PhongMaterial.cpp" />
@@ -140,6 +145,7 @@
     <ClCompile Include="ReflectionRenderer.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="ShadowRenderer.cpp" />
     <ClCompile Include="Sphere.cpp" />
     <ClCompile Include="TestRenderer.cpp" />
   </ItemGroup>

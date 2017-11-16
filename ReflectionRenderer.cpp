@@ -10,7 +10,8 @@ glm::vec3 ReflectionRenderer::Tracing(const Ray& ray, const Scene& scene, int de
 	HitInfo hitinfo;
 	if (scene.Hit(ray, 0, 200, hitinfo))
 	{
-		color = hitinfo.hitObject->material->GetColor(scene.light, ray, hitinfo.position, hitinfo.normal);
+		auto lightInfo = scene.light->GetLightInfo(scene, hitinfo.position);
+		color = hitinfo.hitObject->material->GetColor(lightInfo, ray, hitinfo.position, hitinfo.normal);
 
 		if (hitinfo.hitObject->material->reflectiveness > 1e-5 && depth < 5)
 		{

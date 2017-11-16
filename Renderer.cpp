@@ -14,7 +14,7 @@ void Renderer::Render(const Scene & scene)
 		for (int j = 0; j < width; j++)
 		{
 			float sx = j / (float)width;
-			Ray ray = scene.camera.GenerateRay(sx, 1 - sy);
+			Ray ray = scene.camera->GenerateRay(sx, 1 - sy);
 
 			auto color = Tracing(ray, scene, 0);
 			write.SetPixel(i, j, color);
@@ -32,7 +32,8 @@ glm::vec3 Renderer::Tracing(const Ray & ray, const Scene & scene, int depth)
 	if (scene.Hit(ray, 0, 200, hitinfo))
 	{
 		//float al = glm::min((hitinfo.distance / 20) * 255.0f, 255.0f);
-		color =  hitinfo.hitObject->material->GetColor(scene.light, ray, hitinfo.position, hitinfo.normal);
+		auto lightInfo = scene.light->GetLightInfo(scene, hitinfo.position);
+		color =  hitinfo.hitObject->material->GetColor(lightInfo, ray, hitinfo.position, hitinfo.normal);
 	}
 	return color;
 }

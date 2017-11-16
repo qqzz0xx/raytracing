@@ -19,7 +19,8 @@ glm::vec3 TestRenderer::Tracing(const Ray& ray, const Scene& scene, int depth)
 	if (scene.Hit(ray, 0, 200, hitinfo))
 	{
 		//float al = glm::min((hitinfo.distance / 20) * 255.0f, 255.0f);
-		color = hitinfo.hitObject->material->GetColor(scene.light, ray, hitinfo.position, hitinfo.normal);
+		auto lightInfo = scene.light->GetLightInfo(scene, hitinfo.position);
+		color = hitinfo.hitObject->material->GetColor(lightInfo, ray, hitinfo.position, hitinfo.normal);
 	}
 	return color;
 }

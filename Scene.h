@@ -11,11 +11,11 @@ class Scene
 public:
 	Scene();
 	~Scene();
-	void SetCamera(const Camera& camera)
+	void SetCamera(Camera* camera)
 	{
 		this->camera = camera;
 	}
-	void SetLight(const Light& light)
+	void SetLight( Light* light)
 	{
 		this->light = light;
 	}
@@ -26,8 +26,8 @@ public:
 	bool Hit(const Ray & ray, float tmin, float tmax, HitInfo & t);
 	bool Hit(const Ray & ray, float tmin, float tmax, HitInfo & t) const;
 public:
-	Camera camera;
-	Light light;
+	Camera* camera;
+	Light* light;
 	std::vector<Surface*> surfaces;
 };
 
